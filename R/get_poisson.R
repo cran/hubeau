@@ -14,7 +14,7 @@
 #' @rdname get_poisson
 #'
 #' @examples
-#' if(interactive()) {
+#' \dontrun{
 #' # Get the query parameters for the requested API/endpoint
 #' list_params(api = "poisson",
 #'                      endpoint = "observations")
@@ -27,6 +27,7 @@
 #'                 "effectif_lot",
 #'                 "code_alternatif_taxon",
 #'                 sep = ",")
+#'
 #' brest_fishes <- get_poisson_observations(
 #'   list(
 #'     libelle_commune = "Brest",
@@ -38,13 +39,11 @@
 #'
 #' brest_fishes
 #' }
-get_poisson_observations <- function(params)
-
-  {
+get_poisson_observations <- function(...) {
 
   l <- doApiQuery(api = "poisson",
                   endpoint = "observations",
-                  params = params)
+                  ...)
 
   convert_list_to_tibble(l)
 }

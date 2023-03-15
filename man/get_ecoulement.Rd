@@ -6,14 +6,17 @@
 \alias{get_ecoulement_campagnes}
 \title{Retrieve data from API "Ecoulement des cours d'eau"}
 \usage{
-get_ecoulement_stations(params)
+get_ecoulement_stations(...)
 
-get_ecoulement_observations(params)
+get_ecoulement_observations(...)
 
-get_ecoulement_campagnes(params)
+get_ecoulement_campagnes(...)
 }
 \arguments{
-\item{params}{a \link{list} the list of parameters of the queries and their values in the format \code{list(ParamName = "Param value", ...)}, use the function \link{list_params} for a list of the available filter parameters for a given API endpoint and see the API documentation for their description}
+\item{...}{parameters of the queries and their values in the format
+\verb{Param1_Name = "Param1 value", Param2_Name = "Param2 value"}, use the
+function \link{list_params} for a list of the available filter parameters
+for a given API endpoint and see the API documentation for their description}
 }
 \value{
 A \link[tibble:tibble]{tibble::tibble} with one row by record and one column by field.
@@ -30,7 +33,7 @@ Available endpoints are:
 See the API documentation for available filter parameters: \url{https://hubeau.eaufrance.fr/page/api-ecoulement}
 }
 \examples{
-if(interactive()) {
+\dontrun{
 # Retrieve 2022 observation campaigns in the Jura French department
 get_ecoulement_campagnes(
   list(code_departement = "39",

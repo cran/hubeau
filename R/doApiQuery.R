@@ -15,7 +15,13 @@
 #'
 #' @param api a [character] name of the API (e.g.: "indicateurs_services", "prelevements"...), see example for available APIs
 #' @param endpoint a [character] name of the endpoint, see example for available endpoints in an API
-#' @param params a [list] the list of parameters of the queries and their values in the format `list(ParamName = "Param value", ...)`, use the function [list_params] for a list of the available filter parameters for a given API endpoint and see the API documentation for their description
+#' @param ... parameters of the queries and their values in the format
+#'        `Param1_Name = "Param1 value", Param2_Name = "Param2 value"`, use the
+#'        function [list_params] for a list of the available filter parameters
+#'        for a given API endpoint and see the API documentation for their description
+#' @param params (deprecated) a [list] the list of parameters of the queries and their
+#'        values in the format `list(ParamName = "Param value", ...)`. This parameter
+#'        is replaced by the parameter `...`
 #'
 #' @return A [list] with the concatenated results returned by the API.
 #' @export
@@ -33,15 +39,30 @@
 #'
 #' # To query the endpoint "chroniques" of the API "prelevements"
 #' # on all devices in the commune of Romilly-sur-Seine in 2018
-#' if(interactive()) {
+#' \dontrun{
 #' resp <- doApiQuery(api = "prelevements",
 #'                    endpoint = "chroniques",
-#'                    params = list(code_commune_insee = "10323", annee = "2018"))
+#'                    code_commune_insee = "10323",
+#'                    annee = "2018")
 #' convert_list_to_tibble(resp)
 #' }
 doApiQuery <- function(api,
                        endpoint,
-                       params) {
+                       ..., params) {
+
+  if (!missing(...)) {
+    p_ellipsis <- convert_ellipsis_to_params(...)
+  }
+  if (!missing(params)) {
+    warning("The use of the parameter `params` is deprecated and can be removed ",
+            "in a future version. Please use the argument `...` instead.")
+    if (!missing(...)) {
+      stop("Parameters `...` and `params` can't be used together")
+    }
+  }
+  if (!missing(...)) params <- p_ellipsis
+  if (missing(params)) params <- list()
+
   availableParams <- list_params(api, endpoint)
 
   query <-
@@ -102,7 +123,8 @@ doApiQuery <- function(api,
           "Use filter arguments to reduce the number of records of your query."
         )
       } else if(as.numeric(l$count) == 0) {
-        return(NULL)
+        data <- list()
+        break
       }
       data <- c(data, l$data)
       if (resp$status_code == 206) {
@@ -117,7 +139,22 @@ doApiQuery <- function(api,
       }
     }
   }
+  attr(data, "query") <- query
   return(data)
+}
+
+convert_ellipsis_to_params <- function(...) {
+  params <- list(...)
+  if (length(params) == 1 && is.null(names(params))) {
+    params <- params[[1]]
+  }
+  if (any(names(params) == "")) {
+    stop("All filter parameters have to be named.\n",
+         "For example:\n",
+         "`get_qualite_nappes_stations(code_commune = 34116)` is correct\n",
+         "`get_qualite_nappes_stations(34116)` is wrong\n")
+  }
+  return(params)
 }
 
 
@@ -132,18 +169,61 @@ doApiQuery <- function(api,
 #' @return A [tibble::tibble] with one row by record and one column by field.
 #'
 #' @export
+#' @import dplyr
 #'
 #' @inherit doApiQuery return examples
 #'
 convert_list_to_tibble <- function(l) {
+  query <- attr(l, "query")
   l <-
     lapply(l, function(row) {
-      lapply(row, function(cell) {
-        if (is.null(unlist(cell)))
+      l_row <- lapply(row, function(cell) {
+        if (is.null(unlist(cell))) {
           NA
-        else
-          unlist(cell)
+        } else {
+          cell
+        }
       })
+      list.flatten(l_row)
     })
-  return(purrr::map_df(l, tibble::as_tibble))
+  df <- purrr::map_df(l, tibble::as_tibble)
+  attr(df, "query") <- query
+  return(df)
 }
+
+#' Flatten a nested list to a one-level list
+#'
+#' @details
+#' This function is part of the rlist package \url{https://cran.r-project.org/package=rlist}
+#' as it existed the 2023-02-14.
+#'
+#' The function is essentially a slightly modified version of \code{flatten2}
+#' provided by Tommy at \href{https://stackoverflow.com/a/8139959/2906900}{stackoverflow.com} who
+#' has full credit of the implementation of this function.
+#'
+#' @param x \code{list}
+#' @param use.names \code{logical}. Should the names of \code{x} be kept?
+#' @param classes A character vector of class names, or "ANY" to match any class.
+#' @author \href{https://stackoverflow.com/users/662787/tommy}{Tommy}
+#' @noRd
+#' @examples
+#' p <- list(a=1,b=list(b1=2,b2=3),c=list(c1=list(c11='a',c12='x'),c2=3))
+#' list.flatten(p)
+#'
+#' p <- list(a=1,b=list(x="a",y="b",z=10))
+#' list.flatten(p, classes = "numeric")
+#' list.flatten(p, classes = "character")
+list.flatten <- function(x, use.names = TRUE, classes = "ANY") {
+  len <- sum(rapply(x, function(x) 1L, classes = classes))
+  y <- vector("list", len)
+  i <- 0L
+  items <- rapply(x, function(x) {
+    i <<- i + 1L
+    y[[i]] <<- x
+    TRUE
+  }, classes = classes)
+  if (use.names && !is.null(nm <- names(items)))
+    names(y) <- nm
+  y
+}
+
