@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -36,7 +36,7 @@ param_stations <- paste(
     collapse = ","
 )
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  stations <- get_ecoulement_stations(
 #    code_departement = my_dept,
 #    fields = param_stations
@@ -62,7 +62,7 @@ mapview::mapview(
   legend = FALSE
 )
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  surveys <- get_ecoulement_campagnes(
 #    code_departement = my_dept, # department id
 #    date_campagne_min = "2012-01-01" # start date
@@ -89,7 +89,7 @@ param_obs <- paste(
     collapse = ","
 )
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  observations <-
 #    get_ecoulement_observations(
 #      code_departement = my_dept,
