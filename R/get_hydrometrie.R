@@ -64,7 +64,7 @@ get_hydrometrie_observations_tr  <- function(...,
     endpoint = "observations_tr",
     ...
   )
-  if(!is.null(l)) {
+  if (length(l) > 0) {
     l <- lapply(l, function(x) {
       if (entities == "station") {
         if (is.null(x$code_station)) {
@@ -78,9 +78,8 @@ get_hydrometrie_observations_tr  <- function(...,
       return(x)
     })
     l[sapply(l, is.null)] <- NULL
-    l <- convert_list_to_tibble(l)
   }
-  return(l)
+  return(convert_list_to_tibble(l))
 }
 
 
@@ -94,6 +93,7 @@ get_hydrometrie_sites  <- function(...,
     endpoint = "sites",
     ...
   )
+  attributes_l <- attributes(l)
   l <- lapply(l, function(x) {
     fields <-
       c(
@@ -127,6 +127,7 @@ get_hydrometrie_sites  <- function(...,
     }
     x
   })
+  attributes(l) <- attributes_l
   convert_list_to_tibble(l)
 }
 

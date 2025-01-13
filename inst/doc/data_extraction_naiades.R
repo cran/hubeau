@@ -31,7 +31,7 @@ list_params(api = "qualite_rivieres", endpoint = "condition_environnementale_pc"
 list_params(api = "qualite_rivieres", endpoint = "station_pc")
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  station_21 <- get_qualite_rivieres_station(code_departement = "21")
+# station_21 <- get_qualite_rivieres_station(code_departement = "21")
 
 ## -----------------------------------------------------------------------------
 station_21
@@ -40,57 +40,57 @@ station_21
 list_params(api = "qualite_rivieres", endpoint = "analyse_pc")
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  nitrates_21_raw <- get_qualite_rivieres_analyse(code_departement = "21",
-#                                              date_debut_prelevement = "2000-01-01",
-#                                              date_fin_prelevement = "2000-12-31",
-#                                              code_parametre = "1340")
+# nitrates_21_raw <- get_qualite_rivieres_analyse(code_departement = "21",
+#                                             date_debut_prelevement = "2000-01-01",
+#                                             date_fin_prelevement = "2000-12-31",
+#                                             code_parametre = "1340")
 
 ## -----------------------------------------------------------------------------
 dim(nitrates_21_raw)
 nitrates_21_raw
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  nitrates_21 <- get_qualite_rivieres_analyse(
-#    code_departement = "21",
-#    date_debut_prelevement = "2000-01-01",
-#    date_fin_prelevement = "2022-12-31",
-#    code_parametre = "1340",
-#    fields = c(
-#      "code_station",
-#      "libelle_station",
-#      "libelle_fraction",
-#      "date_prelevement",
-#      "resultat",
-#      "symbole_unite"
-#    )
-#  )
+# nitrates_21 <- get_qualite_rivieres_analyse(
+#   code_departement = "21",
+#   date_debut_prelevement = "2000-01-01",
+#   date_fin_prelevement = "2022-12-31",
+#   code_parametre = "1340",
+#   fields = c(
+#     "code_station",
+#     "libelle_station",
+#     "libelle_fraction",
+#     "date_prelevement",
+#     "resultat",
+#     "symbole_unite"
+#   )
+# )
 
 ## -----------------------------------------------------------------------------
 dim(nitrates_21)
 nitrates_21
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  #list of station to query
-#  station_21 <- get_qualite_rivieres_station(code_departement = "21")
+# #list of station to query
+# station_21 <- get_qualite_rivieres_station(code_departement = "21")
 
 ## -----------------------------------------------------------------------------
 nrow(station_21)
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  nitrates_21 <- get_qualite_rivieres_analyse(
-#    code_departement = "21",
-#    date_debut_prelevement = "2000-01-01",
-#    date_fin_prelevement = "2022-12-31",
-#    code_parametre = "1340",
-#    fields = c(
-#      "code_station",
-#      "libelle_station",
-#      "libelle_fraction",
-#      "date_prelevement",
-#      "resultat",
-#      "symbole_unite"
-#    )
-#  )
+# nitrates_21 <- get_qualite_rivieres_analyse(
+#   code_departement = "21",
+#   date_debut_prelevement = "2000-01-01",
+#   date_fin_prelevement = "2022-12-31",
+#   code_parametre = "1340",
+#   fields = c(
+#     "code_station",
+#     "libelle_station",
+#     "libelle_fraction",
+#     "date_prelevement",
+#     "resultat",
+#     "symbole_unite"
+#   )
+# )
 
 ## -----------------------------------------------------------------------------
 nitrates_21 <- nitrates_21 %>% 

@@ -37,10 +37,10 @@ param_stations <- paste(
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  stations <- get_ecoulement_stations(
-#    code_departement = my_dept,
-#    fields = param_stations
-#  )
+# stations <- get_ecoulement_stations(
+#   code_departement = my_dept,
+#   fields = param_stations
+# )
 
 ## -----------------------------------------------------------------------------
 stations_geo <- stations %>% 
@@ -63,10 +63,10 @@ mapview::mapview(
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  surveys <- get_ecoulement_campagnes(
-#    code_departement = my_dept, # department id
-#    date_campagne_min = "2012-01-01" # start date
-#    )
+# surveys <- get_ecoulement_campagnes(
+#   code_departement = my_dept, # department id
+#   date_campagne_min = "2012-01-01" # start date
+#   )
 
 ## -----------------------------------------------------------------------------
 surveys <- surveys %>%
@@ -90,12 +90,12 @@ param_obs <- paste(
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  observations <-
-#    get_ecoulement_observations(
-#      code_departement = my_dept,
-#      date_observation_min = "2012-01-01",
-#      fields = param_obs
-#    )
+# observations <-
+#   get_ecoulement_observations(
+#     code_departement = my_dept,
+#     date_observation_min = "2012-01-01",
+#     fields = param_obs
+#   )
 
 ## -----------------------------------------------------------------------------
 observations <- observations %>%
