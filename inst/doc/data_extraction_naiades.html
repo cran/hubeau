@@ -435,17 +435,20 @@ for the endpoint “condition_environnementale_pc”:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">list_params</span>(<span class="at">api =</span> <span class="st">&quot;qualite_rivieres&quot;</span>, <span class="at">endpoint =</span> <span class="st">&quot;condition_environnementale_pc&quot;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;bbox&quot;                   &quot;code_banque_reference&quot;  &quot;code_commune&quot;          </span></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;  [4] &quot;code_cours_eau&quot;         &quot;code_departement&quot;       &quot;code_eu_masse_eau&quot;     </span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;code_groupe_parametres&quot; &quot;code_masse_eau&quot;         &quot;code_parametre&quot;        </span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; [10] &quot;code_prelevement&quot;       &quot;code_qualification&quot;     &quot;code_region&quot;           </span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; [13] &quot;code_station&quot;           &quot;code_statut&quot;            &quot;date_debut_maj&quot;        </span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; [16] &quot;date_debut_prelevement&quot; &quot;date_fin_maj&quot;           &quot;date_fin_prelevement&quot;  </span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; [19] &quot;distance&quot;               &quot;distance&quot;               &quot;fields&quot;                </span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; [22] &quot;format&quot;                 &quot;latitude&quot;               &quot;latitude&quot;              </span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; [25] &quot;libelle_commune&quot;        &quot;libelle_departement&quot;    &quot;libelle_masse_eau&quot;     </span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; [28] &quot;libelle_parametre&quot;      &quot;libelle_qualification&quot;  &quot;libelle_region&quot;        </span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; [31] &quot;libelle_station&quot;        &quot;longitude&quot;              &quot;longitude&quot;             </span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; [34] &quot;mnemo_statut&quot;           &quot;nom_cours_eau&quot;          &quot;nom_groupe_parametres&quot; </span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; [37] &quot;page&quot;                   &quot;size&quot;                   &quot;sort&quot;</span></span></code></pre></div>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;code_groupe_parametres&quot; &quot;code_masse_eau&quot;         &quot;code_operation_cep&quot;    </span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; [10] &quot;code_parametre&quot;         &quot;code_point_eau_surface&quot; &quot;code_prelevement&quot;      </span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; [13] &quot;code_qualification&quot;     &quot;code_region&quot;            &quot;code_station&quot;          </span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; [16] &quot;code_statut&quot;            &quot;code_unite&quot;             &quot;commentaire&quot;           </span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; [19] &quot;date_debut_maj&quot;         &quot;date_debut_prelevement&quot; &quot;date_fin_maj&quot;          </span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; [22] &quot;date_fin_prelevement&quot;   &quot;distance&quot;               &quot;distance&quot;              </span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; [25] &quot;fields&quot;                 &quot;format&quot;                 &quot;latitude&quot;              </span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; [28] &quot;latitude&quot;               &quot;libelle_commune&quot;        &quot;libelle_departement&quot;   </span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; [31] &quot;libelle_masse_eau&quot;      &quot;libelle_parametre&quot;      &quot;libelle_qualification&quot; </span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; [34] &quot;libelle_region&quot;         &quot;libelle_resultat&quot;       &quot;libelle_station&quot;       </span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; [37] &quot;longitude&quot;              &quot;longitude&quot;              &quot;mnemo_remarque&quot;        </span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; [40] &quot;mnemo_statut&quot;           &quot;nom_cours_eau&quot;          &quot;nom_groupe_parametres&quot; </span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; [43] &quot;page&quot;                   &quot;resultat&quot;               &quot;size&quot;                  </span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; [46] &quot;sort&quot;</span></span></code></pre></div>
 </div>
 </div>
 <div id="extracting-physico-chemical-data" class="section level1">
@@ -511,23 +514,24 @@ department</h2>
 get the physico-chemical analysis for selected stations. Arguments for
 the function can be listed as follow:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">list_params</span>(<span class="at">api =</span> <span class="st">&quot;qualite_rivieres&quot;</span>, <span class="at">endpoint =</span> <span class="st">&quot;analyse_pc&quot;</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;bbox&quot;                   &quot;code_banque_reference&quot;  &quot;code_bassin_dce&quot;       </span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt;  [4] &quot;code_commune&quot;           &quot;code_cours_eau&quot;         &quot;code_departement&quot;      </span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;code_eu_masse_eau&quot;      &quot;code_fraction&quot;          &quot;code_groupe_parametres&quot;</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; [10] &quot;code_masse_eau&quot;         &quot;code_parametre&quot;         &quot;code_prelevement&quot;      </span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; [13] &quot;code_qualification&quot;     &quot;code_region&quot;            &quot;code_reseau&quot;           </span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; [16] &quot;code_sous_bassin&quot;       &quot;code_station&quot;           &quot;code_statut&quot;           </span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; [19] &quot;code_support&quot;           &quot;date_debut_maj&quot;         &quot;date_debut_prelevement&quot;</span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; [22] &quot;date_fin_maj&quot;           &quot;date_fin_prelevement&quot;   &quot;distance&quot;              </span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; [25] &quot;distance&quot;               &quot;fields&quot;                 &quot;format&quot;                </span></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; [28] &quot;latitude&quot;               &quot;latitude&quot;               &quot;libelle_commune&quot;       </span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; [31] &quot;libelle_departement&quot;    &quot;libelle_fraction&quot;       &quot;libelle_masse_eau&quot;     </span></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; [34] &quot;libelle_parametre&quot;      &quot;libelle_qualification&quot;  &quot;libelle_region&quot;        </span></span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; [37] &quot;libelle_reseau&quot;         &quot;libelle_station&quot;        &quot;libelle_support&quot;       </span></span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; [40] &quot;longitude&quot;              &quot;longitude&quot;              &quot;mnemo_statut&quot;          </span></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; [43] &quot;nom_bassin_dce&quot;         &quot;nom_cours_eau&quot;          &quot;nom_groupe_parametres&quot; </span></span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; [46] &quot;nom_sous_bassin&quot;        &quot;page&quot;                   &quot;size&quot;                  </span></span>
-<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; [49] &quot;sort&quot;                   &quot;type_entite_hydro&quot;</span></span></code></pre></div>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;bbox&quot;                   &quot;code_analyse&quot;           &quot;code_banque_reference&quot; </span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt;  [4] &quot;code_bassin_dce&quot;        &quot;code_commune&quot;           &quot;code_cours_eau&quot;        </span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;code_departement&quot;       &quot;code_eu_masse_eau&quot;      &quot;code_fraction&quot;         </span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; [10] &quot;code_groupe_parametres&quot; &quot;code_masse_eau&quot;         &quot;code_operation&quot;        </span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; [13] &quot;code_parametre&quot;         &quot;code_point_eau_surface&quot; &quot;code_prelevement&quot;      </span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; [16] &quot;code_qualification&quot;     &quot;code_region&quot;            &quot;code_reseau&quot;           </span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; [19] &quot;code_sous_bassin&quot;       &quot;code_station&quot;           &quot;code_statut&quot;           </span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; [22] &quot;code_support&quot;           &quot;date_debut_maj&quot;         &quot;date_debut_prelevement&quot;</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; [25] &quot;date_fin_maj&quot;           &quot;date_fin_prelevement&quot;   &quot;distance&quot;              </span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; [28] &quot;distance&quot;               &quot;fields&quot;                 &quot;format&quot;                </span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; [31] &quot;latitude&quot;               &quot;latitude&quot;               &quot;libelle_commune&quot;       </span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; [34] &quot;libelle_departement&quot;    &quot;libelle_fraction&quot;       &quot;libelle_masse_eau&quot;     </span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; [37] &quot;libelle_parametre&quot;      &quot;libelle_qualification&quot;  &quot;libelle_region&quot;        </span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; [40] &quot;libelle_reseau&quot;         &quot;libelle_station&quot;        &quot;libelle_support&quot;       </span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; [43] &quot;longitude&quot;              &quot;longitude&quot;              &quot;mnemo_statut&quot;          </span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; [46] &quot;nom_bassin_dce&quot;         &quot;nom_cours_eau&quot;          &quot;nom_groupe_parametres&quot; </span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; [49] &quot;nom_sous_bassin&quot;        &quot;page&quot;                   &quot;size&quot;                  </span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">#&gt; [52] &quot;sort&quot;                   &quot;type_entite_hydro&quot;</span></span></code></pre></div>
 <p>These arguments are described in the <a href="https://hubeau.eaufrance.fr/page/api-qualite-cours-deau#/physicochimie/analyse_pc">Hub’eau
 API web page</a>.</p>
 <p>The arguments in this example are:</p>

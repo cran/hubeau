@@ -1,7 +1,7 @@
 Type: Package
 Package: hubeau
 Title: Get Data from the French National Database on Water 'Hub'Eau'
-Version: 0.5.1
+Version: 0.5.2
 Authors@R: c(
     person("David", "Dorchies", , "david.dorchies@inrae.fr", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-6595-7984")),
@@ -28,11 +28,11 @@ Encoding: UTF-8
 Language: en-US
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-01-13 09:45:07 UTC; ddorchies
+Packaged: 2025-04-28 09:26:54 UTC; ddorchies
 Author: David Dorchies [aut, cre] (<https://orcid.org/0000-0002-6595-7984>),
   Pascal Irz [ctb] (<https://orcid.org/0000-0002-2066-8935>),
   Sébastien Grall [ctb],
   Philippe Amiotte Suchet [ctb] (<https://orcid.org/0000-0003-3514-1447>)
 Maintainer: David Dorchies <david.dorchies@inrae.fr>
 Repository: CRAN
-Date/Publication: 2025-01-13 10:30:02 UTC
+Date/Publication: 2025-04-28 09:40:02 UTC
